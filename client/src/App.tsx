@@ -144,6 +144,18 @@ export default function App() {
         </ul>
       )}
 
+        <div style={{ marginBottom: '15px' }}> {/* use this to check for current user */}
+            <label>
+              User?: {' '}
+              <input 
+                type="string" 
+                value={curruser} 
+                onChange={(e) => setCheckUser(String(e.target.value))} 
+                style={{ width: '60px', padding: '4px' }}
+            />
+          </label>
+        </div>
+
       {loading ? (
         <p>Loading reading log...</p>
       ) : (
@@ -181,17 +193,6 @@ export default function App() {
           {readinglog.length === 0 && <p>No reading log found.</p>}
         </ul>
       )}
-        <div style={{ marginBottom: '15px' }}> {/* use this to check for current user */}
-            <label>
-              User?: {' '}
-              <input 
-                type="string" 
-                value={curruser} 
-                onChange={(e) => setCheckUser(String(e.target.value))} 
-                style={{ width: '60px', padding: '4px' }}
-            />
-          </label>
-        </div>
     </div>
   );
 }
